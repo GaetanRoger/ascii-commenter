@@ -3,6 +3,8 @@ import {FigletService} from '../../services/figlet/figlet.service';
 import {ClipboardService} from 'ngx-clipboard';
 import {CommentsService} from '../../services/comments/comments.service';
 import {BorderService} from '../../services/border/border.service';
+import {MarginsService} from '../../services/margins/margins.service';
+import {Margins} from '../../services/margins/margins';
 
 @Component({
     selector: 'app-figlet',
@@ -10,6 +12,7 @@ import {BorderService} from '../../services/border/border.service';
     styleUrls: ['./figlet.component.css'],
     providers: [
         FigletService,
+        MarginsService,
         CommentsService,
         BorderService,
         ClipboardService
@@ -28,10 +31,14 @@ export class FigletComponent implements OnInit, OnChanges {
     @Input()
     bodered = false;
 
+    @Input()
+    margins: Margins = {};
+
     private figlet: string;
     private copied = false;
 
     constructor(private readonly figletService: FigletService,
+                private readonly marginsService: MarginsService,
                 private readonly commentsService: CommentsService,
                 private readonly borderService: BorderService,
                 private readonly clipboardService: ClipboardService) {
@@ -46,9 +53,9 @@ export class FigletComponent implements OnInit, OnChanges {
     }
 
     private update() {
-        console.log('update: bordered ?', this.bodered);
         this.figletService.text(this.text, this.font).subscribe(
             v => {
+                v = this.marginsService.add_margins(v, this.margins);
                 v = this.commentsService.comment(v, this.comment);
                 v = this.bodered ? this.borderService.border(v, this.comment) : v;
                 this.figlet = v;
@@ -62,6 +69,6 @@ export class FigletComponent implements OnInit, OnChanges {
 
         setTimeout(() => {
             this.copied = false;
-        }, 1000);
+        }, 2000);
     }
 }

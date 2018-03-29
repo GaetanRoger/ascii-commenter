@@ -18,7 +18,8 @@ export class ParametersInputComponent {
     parameters: ParametersInput = {
         text: 'Hello, world!',
         font: 'Big',
-        comment: 'None'
+        comment: 'None',
+        margins: {}
     };
 
     constructor() {

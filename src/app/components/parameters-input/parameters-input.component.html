@@ -24,16 +24,36 @@
         <h3>Margins</h3>
         <div class="margins-container">
             <mat-form-field>
-                <input matInput placeholder="Left" type="number" min="0" step="1">
+                <input matInput [(ngModel)]="parameters.margins.left"
+                       (change)="changed()"
+                       placeholder="Left"
+                       type="number"
+                       min="0"
+                       step="1">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Right" type="number" min="0" step="1">
+                <input matInput [(ngModel)]="parameters.margins.right"
+                       (change)="changed()"
+                       placeholder="Right"
+                       type="number"
+                       min="0"
+                       step="1">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Top" type="number" min="0" step="1">
+                <input matInput [(ngModel)]="parameters.margins.top"
+                       (change)="changed()"
+                       placeholder="Top"
+                       type="number"
+                       min="0"
+                       step="1">
             </mat-form-field>
             <mat-form-field>
-                <input matInput placeholder="Down" type="number" min="0" step="1">
+                <input matInput [(ngModel)]="parameters.margins.bottom"
+                       (change)="changed()"
+                       placeholder="Down"
+                       type="number"
+                       min="0"
+                       step="1">
             </mat-form-field>
 
         </div>
