@@ -17,8 +17,8 @@ export class CommentsService {
         const comment_type = comments.find(v => v.name === comment_name);
 
         // If not comment exists with this name, ignoring
-        // It also covers the case where `comment_name` is undefined, null or empty
-        if (!comment_type) {
+        // It also covers the case where `comment_name` or `text` is undefined, null or empty
+        if (!comment_type || !text) {
             return text;
         }
 

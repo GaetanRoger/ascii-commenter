@@ -3,6 +3,7 @@ import comments from '../../../comments';
 
 @Injectable()
 export class BorderService {
+    private readonly NO_COMMENT_NAME = 'None';
 
     constructor() {
     }
@@ -23,7 +24,7 @@ export class BorderService {
 
         // If not comment exists with this name, ignoring
         // It also covers the case where `comment_name` is undefined, null or empty
-        if (!comment_type) {
+        if (!comment_type || !text || comment_name === this.NO_COMMENT_NAME) {
             return text;
         }
 

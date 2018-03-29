@@ -9,9 +9,20 @@ describe('CommentsService', () => {
         service = new CommentsService();
     });
 
+
     /*
      * GLOBAL CASES
      */
+
+    it('should return input if text is undefined, null or empty', () => {
+        const undefinedResult = service.comment(undefined, 'C');
+        const nullResult = service.comment(null, 'C');
+        const emptyResult = service.comment('', 'C');
+
+        expect(undefinedResult).toBe(undefined);
+        expect(nullResult).toBe(null);
+        expect(emptyResult).toBe('');
+    });
 
     it('should not comment if "None" comment name is sent', () => {
         const result = service.comment(HELLO_WORLD, 'None');
