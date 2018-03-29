@@ -1,0 +1,14 @@
+<mat-card>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Text" [(ngModel)]="parameters.text" (change)="changed()">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Font to use" [(ngModel)]="parameters.font" (change)="changed()">
+                <mat-option *ngFor="let font of fonts" value="{{font}}">
+                    {{ font }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>

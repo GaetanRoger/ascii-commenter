@@ -1,0 +1,14 @@
+<mat-card *ngIf="figlet">
+    <mat-card-content>
+        <pre>{{ figlet }}</pre>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="copyToClipboard()" [color]="copied ? '' : 'primary'">
+            {{ copied ? 'Copied!' : 'Copy to clipboard'}}
+        </button>
+    </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="!figlet">
+    <small>Please input some text!</small>
+</mat-card>
