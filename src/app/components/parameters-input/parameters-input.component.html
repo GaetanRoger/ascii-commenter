@@ -10,5 +10,32 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Comment" [(ngModel)]="parameters.comment" (change)="changed()">
+                <mat-option *ngFor="let comment of comments" value="{{comment}}">
+                    {{ comment }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="parameters.borders"
+                      [disabled]="parameters.comment === 'None'"
+                      (change)="changed()">Bordered
+        </mat-checkbox>
+        <h3>Margins</h3>
+        <div class="margins-container">
+            <mat-form-field>
+                <input matInput placeholder="Left" type="number" min="0" step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Right" type="number" min="0" step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Top" type="number" min="0" step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Down" type="number" min="0" step="1">
+            </mat-form-field>
+
+        </div>
     </mat-card-content>
 </mat-card>

@@ -9,6 +9,7 @@ import {ParametersInput} from './components/parameters-input/interfaces/paramete
 export class AppComponent {
     parameters: ParametersInput = {
         text: 'Hello, world!',
-        font: 'Big'
+        font: 'Big',
+        comment: 'None'
     };
 }

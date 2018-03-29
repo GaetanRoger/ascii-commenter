@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {ParametersInput} from './interfaces/parameters-input';
 import fonts from '../../../fonts';
+import comments from '../../../comments';
 
 @Component({
     selector: 'app-parameters-input',
@@ -13,9 +14,11 @@ export class ParametersInputComponent {
     values: EventEmitter<ParametersInput> = new EventEmitter<ParametersInput>();
 
     fonts: string[] = fonts;
+    comments: string[] = comments.map(c => c.name);
     parameters: ParametersInput = {
         text: 'Hello, world!',
-        font: 'Big'
+        font: 'Big',
+        comment: 'None'
     };
 
     constructor() {

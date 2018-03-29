@@ -1,6 +1,6 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {MatButtonModule, MatCardModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
@@ -17,7 +17,8 @@ describe('AppComponent', () => {
                 MatSelectModule,
                 MatInputModule,
                 MatCardModule,
-                MatButtonModule
+                MatButtonModule,
+                MatCheckboxModule
             ],
             declarations: [
                 AppComponent,

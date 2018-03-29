@@ -2,7 +2,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {FigletComponent} from './figlet.component';
 import {FigletService} from '../../services/figlet/figlet.service';
-import {MatButtonModule, MatCardModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {ClipboardModule, ClipboardService} from 'ngx-clipboard';
@@ -20,7 +20,8 @@ describe('FigletComponent', () => {
                 MatSelectModule,
                 MatInputModule,
                 MatCardModule,
-                MatButtonModule
+                MatButtonModule,
+                MatCheckboxModule
             ],
             declarations: [FigletComponent],
             providers: [FigletService, ClipboardService]

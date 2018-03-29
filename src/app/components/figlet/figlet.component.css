@@ -1,3 +1,7 @@
 small {
     color: #757575;
 }
+
+pre {
+    font-family: Courier, monospace;
+}

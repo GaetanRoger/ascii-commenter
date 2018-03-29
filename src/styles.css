@@ -4,3 +4,7 @@
 body {
     background: #F5F5F5;
 }
+
+* {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
