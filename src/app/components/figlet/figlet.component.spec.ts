@@ -5,6 +5,7 @@ import {FigletService} from '../../services/figlet/figlet.service';
 import {MatButtonModule, MatCardModule, MatInputModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
+import {ClipboardModule, ClipboardService} from 'ngx-clipboard';
 
 describe('FigletComponent', () => {
     let component: FigletComponent;
@@ -12,16 +13,17 @@ describe('FigletComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [FigletComponent],
-            providers: [FigletService],
             imports: [
+                ClipboardModule,
                 FormsModule,
                 BrowserAnimationsModule,
                 MatSelectModule,
                 MatInputModule,
                 MatCardModule,
                 MatButtonModule
-            ]
+            ],
+            declarations: [FigletComponent],
+            providers: [FigletService, ClipboardService]
         })
             .compileComponents();
     }));

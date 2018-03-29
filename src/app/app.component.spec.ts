@@ -5,11 +5,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
 import {FigletComponent} from './components/figlet/figlet.component';
+import {ClipboardModule, ClipboardService} from 'ngx-clipboard';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
+                ClipboardModule,
                 FormsModule,
                 BrowserAnimationsModule,
                 MatSelectModule,
@@ -22,7 +24,7 @@ describe('AppComponent', () => {
                 ParametersInputComponent,
                 FigletComponent
             ],
-            providers: []
+            providers: [ClipboardService]
         }).compileComponents();
     }));
     it('should create the app', async(() => {

@@ -1,7 +1,7 @@
 {
-  "name": "webapp",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "ascii-gaetanroger-webapp",
+  "version": "0.1.0",
+  "license": "GNU GPLv3",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +11,6 @@
     "e2e": "ng e2e",
     "fonts": "python ./src/fontsBundler.py"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
