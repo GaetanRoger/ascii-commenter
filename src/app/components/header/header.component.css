@@ -1,0 +1,13 @@
+.mat-toolbar-row {
+    display: flex;
+    justify-content: center;
+}
+
+.mat-toolbar-multiple-rows, .mat-toolbar-row {
+    height: 48px;
+    min-height: 48px;
+}
+
+.mat-toolbar {
+    margin: 0 0 24px;
+}

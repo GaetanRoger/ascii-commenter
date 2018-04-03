@@ -1,1 +1,13 @@
-<pre>{{ figlet }}</pre>
+<app-header></app-header>
+<div class="container">
+    <app-parameters-input (values)="parameters = $event"
+                          class="parameters"></app-parameters-input>
+
+    <app-figlet [text]="parameters.text"
+                [font]="parameters.font"
+                [comment]="parameters.comment"
+                [bodered]="parameters.borders"
+                [margins]="parameters.margins"
+                class="figlet"></app-figlet>
+</div>
+

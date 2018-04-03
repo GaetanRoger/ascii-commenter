@@ -4,18 +4,34 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {FigletService} from './services/figlet/figlet.service';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatToolbarModule} from '@angular/material';
+import {FigletComponent} from './components/figlet/figlet.component';
+import {FormsModule} from '@angular/forms';
+import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
+import {ClipboardModule} from 'ngx-clipboard';
+import {HeaderComponent} from './components/header/header.component';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        FigletComponent,
+        ParametersInputComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
-        BrowserAnimationsModule
+        ClipboardModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+        MatInputModule,
+        MatCardModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatToolbarModule
     ],
-    providers: [FigletService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

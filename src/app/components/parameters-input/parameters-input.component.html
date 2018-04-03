@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-card-content>
+        <mat-form-field>
+            <input matInput placeholder="Text" [(ngModel)]="parameters.text" (change)="changed()">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Font to use" [(ngModel)]="parameters.font" (change)="changed()">
+                <mat-option *ngFor="let font of fonts" value="{{font}}">
+                    {{ font }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select placeholder="Comment" [(ngModel)]="parameters.comment" (change)="changed()">
+                <mat-option *ngFor="let comment of comments" value="{{comment}}">
+                    {{ comment }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="parameters.borders"
+                      [disabled]="parameters.comment === 'None'"
+                      (change)="changed()">Bordered
+        </mat-checkbox>
+        <h3>Margins</h3>
+        <div class="margins-container">
+            <mat-form-field>
+                <input matInput [(ngModel)]="parameters.margins.left"
+                       (change)="changed()"
+                       placeholder="Left"
+                       type="number"
+                       min="0"
+                       step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="parameters.margins.right"
+                       (change)="changed()"
+                       placeholder="Right"
+                       type="number"
+                       min="0"
+                       step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="parameters.margins.top"
+                       (change)="changed()"
+                       placeholder="Top"
+                       type="number"
+                       min="0"
+                       step="1">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [(ngModel)]="parameters.margins.bottom"
+                       (change)="changed()"
+                       placeholder="Down"
+                       type="number"
+                       min="0"
+                       step="1">
+            </mat-form-field>
+
+        </div>
+    </mat-card-content>
+</mat-card>
