@@ -34,8 +34,8 @@ export class FigletComponent implements OnInit, OnChanges {
     @Input()
     margins: Margins = {};
 
-    private figlet: string;
-    private copied = false;
+    figlet: string;
+    copied = false;
 
     constructor(private readonly figletService: FigletService,
                 private readonly marginsService: MarginsService,
