@@ -1,6 +1,6 @@
 {
-  "name": "ascii-gaetanroger-webapp",
-  "version": "0.1.0",
+  "name": "gaetanroger-ascii-commenter",
+  "version": "1.0.0",
   "license": "GNU GPLv3",
   "scripts": {
     "ng": "ng",
