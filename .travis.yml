@@ -38,3 +38,4 @@ deploy:
   skip_cleanup: true
   local_dir: dist
   acl: public_read
+  region: eu-west-3
