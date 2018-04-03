@@ -1,11 +1,12 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
 import {FigletComponent} from './components/figlet/figlet.component';
 import {ClipboardModule, ClipboardService} from 'ngx-clipboard';
+import {HeaderComponent} from './components/header/header.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -18,12 +19,14 @@ describe('AppComponent', () => {
                 MatInputModule,
                 MatCardModule,
                 MatButtonModule,
-                MatCheckboxModule
+                MatCheckboxModule,
+                MatToolbarModule
             ],
             declarations: [
                 AppComponent,
                 ParametersInputComponent,
-                FigletComponent
+                FigletComponent,
+                HeaderComponent
             ],
             providers: [ClipboardService]
         }).compileComponents();

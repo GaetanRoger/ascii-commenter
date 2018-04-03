@@ -4,18 +4,20 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatCheckboxModule, MatInputModule, MatSelectModule, MatToolbarModule} from '@angular/material';
 import {FigletComponent} from './components/figlet/figlet.component';
 import {FormsModule} from '@angular/forms';
 import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
 import {ClipboardModule} from 'ngx-clipboard';
+import {HeaderComponent} from './components/header/header.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         FigletComponent,
-        ParametersInputComponent
+        ParametersInputComponent,
+        HeaderComponent
     ],
     imports: [
         BrowserModule,
@@ -26,7 +28,8 @@ import {ClipboardModule} from 'ngx-clipboard';
         MatInputModule,
         MatCardModule,
         MatButtonModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatToolbarModule
     ],
     providers: [],
     bootstrap: [AppComponent]
