@@ -16,3 +16,7 @@ h3 {
 .margins-container mat-form-field {
     width: 23%;
 }
+
+.full-width {
+    width: 100%;
+}
