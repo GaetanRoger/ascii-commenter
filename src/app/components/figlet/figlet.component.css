@@ -4,6 +4,7 @@ small {
 
 pre {
     font-family: Courier, monospace;
+    overflow: auto;
 }
 
 @media screen and (max-width: 640px) {
