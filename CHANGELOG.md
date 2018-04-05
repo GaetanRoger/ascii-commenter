@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  * ADDED — Custom README.md with Travis build badge
  * ADDED — Horizontal scrollbar when ASCII text overflows
  * ADDED — Bottom bar with author's name
+ * CHANGED — Title from 'Webapp' to 'ASCII Commenter'
 
 ### [1.1.0] - 2017-04-03
  * ADDED — Application is now responsive for mobile devices
