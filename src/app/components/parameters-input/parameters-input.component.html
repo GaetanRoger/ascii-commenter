@@ -1,23 +1,25 @@
 <mat-card>
     <mat-card-content>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <input matInput placeholder="Text" [(ngModel)]="parameters.text" (change)="changed()">
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <mat-select placeholder="Font to use" [(ngModel)]="parameters.font" (change)="changed()">
                 <mat-option *ngFor="let font of fonts" value="{{font}}">
                     {{ font }}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field>
+        <mat-form-field class="full-width">
             <mat-select placeholder="Comment" [(ngModel)]="parameters.comment" (change)="changed()">
                 <mat-option *ngFor="let comment of comments" value="{{comment}}">
                     {{ comment }}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-checkbox [(ngModel)]="parameters.borders"
+        <br>
+        <mat-checkbox class="full-width"
+                      [(ngModel)]="parameters.borders"
                       [disabled]="parameters.comment === 'None'"
                       (change)="changed()">Bordered
         </mat-checkbox>
