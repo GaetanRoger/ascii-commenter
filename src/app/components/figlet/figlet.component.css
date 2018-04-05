@@ -5,3 +5,9 @@ small {
 pre {
     font-family: Courier, monospace;
 }
+
+@media screen and (max-width: 640px) {
+    pre {
+        font-size: 0.35rem;
+    }
+}
