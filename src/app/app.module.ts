@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {ParametersInputComponent} from './components/parameters-input/parameters-input.component';
 import {ClipboardModule} from 'ngx-clipboard';
 import {HeaderComponent} from './components/header/header.component';
+import { BottomInfoComponent } from './components/bottom-info/bottom-info.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import {HeaderComponent} from './components/header/header.component';
         AppComponent,
         FigletComponent,
         ParametersInputComponent,
-        HeaderComponent
+        HeaderComponent,
+        BottomInfoComponent
     ],
     imports: [
         BrowserModule,

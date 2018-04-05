@@ -1,0 +1,28 @@
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    font-size: 0.75rem;
+    color: gray;
+}
+
+.mat-toolbar-row {
+    display: flex;
+    justify-content: right;
+}
+
+.love {
+    color: firebrick;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 640px) {
+    .mat-toolbar-multiple-rows, .mat-toolbar-row {
+        height: 24px;
+        min-height: 24px;
+    }
+}
+
+
