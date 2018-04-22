@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.2.0] - 2017-04-22
+ * ADDED — Custom README.md with Travis build badge
+ * ADDED — Horizontal scrollbar when ASCII text overflows
+ * ADDED — Bottom bar with author's name
+ * ADDED — Custom favicon (will probably change in the future for something nicer)
+ * CHANGED — Title from 'Webapp' to 'ASCII Commenter'
 
-### [1.1.0]
+### [1.1.0] - 2017-04-03
  * ADDED — Application is now responsive for mobile devices
  * ADDED — This changelog file to log changes (yeh)
 
