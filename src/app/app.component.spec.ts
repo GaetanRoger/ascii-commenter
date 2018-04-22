@@ -7,6 +7,7 @@ import {ParametersInputComponent} from './components/parameters-input/parameters
 import {FigletComponent} from './components/figlet/figlet.component';
 import {ClipboardModule, ClipboardService} from 'ngx-clipboard';
 import {HeaderComponent} from './components/header/header.component';
+import {BottomInfoComponent} from './components/bottom-info/bottom-info.component';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {
@@ -26,7 +27,8 @@ describe('AppComponent', () => {
                 AppComponent,
                 ParametersInputComponent,
                 FigletComponent,
-                HeaderComponent
+                HeaderComponent,
+                BottomInfoComponent
             ],
             providers: [ClipboardService]
         }).compileComponents();
