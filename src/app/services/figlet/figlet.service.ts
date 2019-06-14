@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import * as figlet from 'figlet';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class FigletService {
@@ -13,10 +13,6 @@ export class FigletService {
      * Return the text in the figlet font.
      *
      * If the text is undefined, null or empty, returns an empty string.
-     *
-     * @param {string} text
-     * @param {string} font
-     * @returns {Observable<string>}
      */
     text(text: string, font: string): Observable<string> {
         return new Observable<string>(subscriber => {
