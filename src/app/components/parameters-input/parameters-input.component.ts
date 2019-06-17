@@ -3,6 +3,7 @@ import { ParametersInput } from './interfaces/parameters-input';
 import fonts from '../../../fonts';
 import comments from '../../../comments';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Fonts } from 'figlet';
 
 @Component({
   selector: 'app-parameters-input',
@@ -13,7 +14,7 @@ export class ParametersInputComponent {
   @Output()
   values: EventEmitter<ParametersInput> = new EventEmitter<ParametersInput>();
 
-  readonly fonts: string[] = fonts;
+  readonly fonts: Fonts[] = fonts;
   readonly comments: string[] = comments.map(c => c.name);
 
   formGroup: FormGroup;

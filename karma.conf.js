@@ -26,6 +26,12 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
+    files: [
+      {pattern: './src/assets/**', watched: false, included: false, nocache: false, served: true}
+    ],
+    proxies: {
+      '/assets/': '/base/src/assets/'
+    },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
@@ -34,5 +40,5 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true
-  });
-};
+  })
+}

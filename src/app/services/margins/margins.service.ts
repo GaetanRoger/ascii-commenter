@@ -3,10 +3,6 @@ import {Margins} from './margins';
 
 @Injectable()
 export class MarginsService {
-
-    constructor() {
-    }
-
     add_margins(text: string, margins: Margins): string {
         if (!margins || !text) {
             return text;
@@ -15,7 +11,7 @@ export class MarginsService {
         let lines = text.split('\n');
 
         // Adding default values
-        const margins_with_defaults: Margins = {
+        const marginsWithDefaults: Margins = {
             left: margins.left ? margins.left : 0,
             right: margins.right ? margins.right : 0,
             top: margins.top ? margins.top : 0,
@@ -23,22 +19,20 @@ export class MarginsService {
         };
 
         // Generating empty lines and columns
-        const margins_spaces = {
-            left: Array(margins_with_defaults.left).join(' '),
-            right: Array(margins_with_defaults.right).join(' '),
+        const marginsSpaces = {
+            left: Array(marginsWithDefaults.left).join(' '),
+            right: Array(marginsWithDefaults.right).join(' '),
             top: '',
             bottom: ''
         };
 
-        console.log('m_w_d', margins_with_defaults, 'm_s', margins_spaces);
+        lines = lines.map(l => marginsSpaces.left + l + marginsSpaces.right);
 
-        lines = lines.map(l => margins_spaces.left + l + margins_spaces.right);
+        const maxWidth = Math.max(...lines.map(l => l.length)) + 1;
 
-        const max_width = Math.max(...lines.map(l => l.length)) + 1;
+        marginsSpaces.top = Array(marginsWithDefaults.top).join(Array(maxWidth).join(' ') + '\n');
+        marginsSpaces.bottom = Array(marginsWithDefaults.bottom).join('\n' + Array(maxWidth).join(' '));
 
-        margins_spaces.top = Array(margins_with_defaults.top).join(Array(max_width).join(' ') + '\n');
-        margins_spaces.bottom = Array(margins_with_defaults.bottom).join('\n' + Array(max_width).join(' '));
-
-        return margins_spaces.top + lines.join('\n') + margins_spaces.bottom;
+        return marginsSpaces.top + lines.join('\n') + marginsSpaces.bottom;
     }
 }
