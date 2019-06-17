@@ -1,4 +1,4 @@
-<mat-card *ngIf="figlet">
+<mat-card *ngIf="figlet$ | async as figlet">
     <mat-card-content>
         <pre>{{ figlet }}</pre>
     </mat-card-content>
@@ -9,6 +9,6 @@
     </mat-card-actions>
 </mat-card>
 
-<mat-card *ngIf="!figlet">
+<mat-card *ngIf="!(figlet$ | async)">
     <small>Please input some text!</small>
 </mat-card>
