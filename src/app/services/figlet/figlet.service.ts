@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import * as figlet from 'figlet';
 import { Observable } from 'rxjs';
+import { Fonts, text as figlet, defaults } from 'figlet';
 
 @Injectable()
 export class FigletService {
 
     constructor() {
-        figlet.defaults({fontPath: 'assets/fonts'});
+        defaults({fontPath: 'assets/fonts'});
     }
 
     /**
@@ -14,7 +14,7 @@ export class FigletService {
      *
      * If the text is undefined, null or empty, returns an empty string.
      */
-    text(text: string, font: string): Observable<string> {
+    text(text: string, font: Fonts): Observable<string> {
         return new Observable<string>(subscriber => {
             // If text is undefined, null or empty, return an empty string
             if (!text) {

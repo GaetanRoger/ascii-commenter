@@ -1,4 +1,6 @@
-const fonts = [
+import { Fonts } from 'figlet';
+
+const fonts: Fonts[] = [
     '1Row',
     '3-D',
     '3D Diagonal',

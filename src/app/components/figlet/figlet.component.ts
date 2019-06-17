@@ -5,6 +5,7 @@ import {CommentsService} from '../../services/comments/comments.service';
 import {BorderService} from '../../services/border/border.service';
 import {MarginsService} from '../../services/margins/margins.service';
 import {Margins} from '../../services/margins/margins';
+import { Fonts } from 'figlet';
 
 @Component({
     selector: 'app-figlet',
@@ -23,7 +24,7 @@ export class FigletComponent implements OnInit, OnChanges {
     text: string;
 
     @Input()
-    font: string;
+    font: Fonts;
 
     @Input()
     comment = 'None';
