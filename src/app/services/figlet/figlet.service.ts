@@ -12,19 +12,25 @@ export class FigletService {
   /**
    * Return the text in the figlet font.
    *
-   * If the text is undefined, null or empty, returns an empty string.
+   * If no text or font is given, returns an empty string.
    */
   text(text: string, font: Fonts): Observable<string> {
     return new Observable<string>(subscriber => {
       // If text is undefined, null or empty, return an empty string
-      if (!text) {
+      if (!text || !font) {
         subscriber.next('');
         subscriber.complete();
         return;
       }
 
-      figlet(text, font, (err: object, res: string) => {
-        console.log('err', err, 'res', res);
+      figlet(text, font, (err: Error, res: string) => {
+        console.log('err', err);
+
+        if (err) {
+          subscriber.next(this.generateErrorMessage(err));
+          subscriber.complete();
+          return;
+        }
 
         let lines = res.split('\n');
 
@@ -43,4 +49,8 @@ export class FigletService {
 
   }
 
+  private generateErrorMessage(err: Error) {
+    return `Unable to generate text, an error occurred: ${err.message}\n`
+      + 'Maybe try with a different font?';
+  }
 }

@@ -1,5 +1,10 @@
 import { CommentType } from './app/services/comments/comment-type';
 
+/**
+ * Available comment types.
+ *
+ * @see CommentType for available options.
+ */
 const comments: CommentType[] = [
   {
     name: 'None',
