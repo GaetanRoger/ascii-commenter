@@ -1,0 +1,23 @@
+<section class="space-y-4 h-full w-full flex justify-center items-center">
+  @if (figlet$ | async; as figlet) {
+    <div class="flex flex-col items-center space-y-4">
+      <div
+        class="hover:scale-110 transition ease-in-out tooltip tooltip-accent cursor-pointer active:scale-95"
+        [attr.data-tip]="copied ? 'Copied!' : 'Click to copy to clipboard!'"
+        (click)="copyToClipboard(figlet)"
+        (keydown.enter)="copyToClipboard(figlet)"
+        tabindex="0">
+        <div
+          class="mockup-code bg-neutral text-neutral-content shadow-xl hover:shadow-2xl transition ease-in-out text-left">
+          @for (figletLine of getFigletLines(figlet); track figletLine) {
+            <pre><code>{{ figletLine }} </code></pre>
+          }
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div>
+      <small>Please input some text and select a font!</small>
+    </div>
+  }
+</section>

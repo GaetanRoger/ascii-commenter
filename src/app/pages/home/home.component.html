@@ -1,0 +1,10 @@
+<div class="flex p-8 space-x-8 w-full">
+  <app-home-parameters-input (parametersChange)="parameters = $event" />
+  <app-home-figlet
+    *ngIf="parameters"
+    [text]="parameters?.text"
+    [font]="parameters?.font"
+    [comment]="parameters?.comment"
+    [bordered]="parameters?.borders"
+    [margins]="parameters?.margins" />
+</div>

@@ -1,0 +1,109 @@
+<div
+  class="card w-96 bg-neutral-content shadow-sm text-primary-content hover:shadow-xl active:shadow-xl transition ease-in-out">
+  <form [formGroup]="formGroup" class="card-body">
+    <h2 class="card-title justify-center text-center">ASCII Commenter!</h2>
+
+    <label class="form-control w-full max-w-xs">
+      <div class="label">
+        <span class="label-text">1. Enter your text</span>
+      </div>
+      <input
+        formControlName="text"
+        placeholder="Text"
+        type="text"
+        class="input input-bordered w-full max-w-xs" />
+    </label>
+
+    <label class="form-control w-full max-w-xs">
+      <div class="label">
+        <span class="label-text">2. Select the font</span>
+      </div>
+      <select
+        formControlName="font"
+        class="select select-bordered w-full max-w-xs">
+        @for (font of fonts; track font) {
+          <option [value]="font">{{ font }}</option>
+        }
+      </select>
+    </label>
+
+    <label class="form-control w-full max-w-xs">
+      <div class="label">
+        <span class="label-text">3. Select the comment type</span>
+      </div>
+      <select
+        formControlName="comment"
+        class="select select-bordered w-full max-w-xs">
+        >
+        @for (comment of comments; track comment) {
+          <option [value]="comment">{{ comment }}</option>
+        }
+      </select>
+    </label>
+
+    <div
+      class="form-control tooltip-right"
+      [ngClass]="{ tooltip: borders?.disabled }"
+      data-tip="Choose a comment type to enable borders.">
+      <label class="label cursor-pointer" for="borders">
+        <span class="label-text">4. Enable borders</span>
+        <input
+          id="borders"
+          type="checkbox"
+          class="toggle"
+          formControlName="borders" />
+      </label>
+    </div>
+
+    <fieldset formGroupName="margins">
+      <div class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">5. Add margins</span>
+        </div>
+        <label class="input input-bordered flex items-center gap-2">
+          <ng-icon [svg]="arrowLeftCircle" size="24" />
+          <input
+            formControlName="left"
+            placeholder="Left"
+            type="number"
+            min="1"
+            step="1"
+            class="grow" />
+        </label>
+      </div>
+
+      <label class="input input-bordered flex items-center gap-2">
+        <ng-icon [svg]="arrowRightCircle" size="24" />
+        <input
+          formControlName="right"
+          placeholder="Right"
+          type="number"
+          min="1"
+          step="1"
+          class="grow" />
+      </label>
+
+      <label class="input input-bordered flex items-center gap-2">
+        <ng-icon [svg]="arrowUpCircle" size="24" />
+        <input
+          formControlName="top"
+          placeholder="Top"
+          type="number"
+          min="1"
+          step="1"
+          class="grow" />
+      </label>
+
+      <label class="input input-bordered flex items-center gap-2">
+        <ng-icon [svg]="arrowDownCircle" size="24" />
+        <input
+          formControlName="bottom"
+          placeholder="bottom"
+          type="number"
+          min="1"
+          step="1"
+          class="grow" />
+      </label>
+    </fieldset>
+  </form>
+</div>
